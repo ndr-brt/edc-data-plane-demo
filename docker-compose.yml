@@ -8,8 +8,14 @@ services:
         JAR: launchers/control-plane/build/libs/edc.jar
     ports:
       - "8181:9191"
+    environment:
+      EDC_VAULT: vault.properties
+      EDC_KEYSTORE: cert.pfx
+      EDC_KEYSTORE_PASSWORD: 123456
     volumes:
       - ${PWD}/config/provider-control-plane.properties:/app/configuration.properties
+      - ${PWD}/config/provider-control-plane-vault.properties:/app/vault.properties
+      - ${PWD}/certs/cert.pfx:/app/cert.pfx
 
   provider-data-plane:
     build:
@@ -28,8 +34,14 @@ services:
         JAR: launchers/control-plane/build/libs/edc.jar
     ports:
       - "8191:9191"
+    environment:
+      EDC_VAULT: vault.properties
+      EDC_KEYSTORE: cert.pfx
+      EDC_KEYSTORE_PASSWORD: 123456
     volumes:
       - ${PWD}/config/consumer-control-plane.properties:/app/configuration.properties
+      - ${PWD}/config/consumer-control-plane-vault.properties:/app/vault.properties
+      - ${PWD}/certs/cert.pfx:/app/cert.pfx
 
   consumer-data-plane:
     build:

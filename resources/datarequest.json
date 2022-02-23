@@ -1,0 +1,22 @@
+{
+  "edctype": "dataspaceconnector:datarequest",
+  "id": "412123341234",
+  "contractId": "1:baa9f61e-d0ee-43bf-91b5-9391f57fd361",
+  "connectorId": "provider-control-plane",
+  "connectorAddress": "http://provider-control-plane:9191/api/ids/multipart",
+  "protocol": "ids-multipart",
+  "assetId": "asset-id",
+  "dataEntry": {
+    "id": "asset-id",
+    "policyId": "use-eu"
+  },
+  "dataDestination": {
+    "type": "HttpProxy"
+  },
+  "managedResources": false,
+  "transferType": {
+    "contentType": "application/octet-stream",
+    "isFinite": true
+  }
+}
+

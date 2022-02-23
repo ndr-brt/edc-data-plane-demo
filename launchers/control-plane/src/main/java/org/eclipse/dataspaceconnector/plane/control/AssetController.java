@@ -1,8 +1,10 @@
 package org.eclipse.dataspaceconnector.plane.control;
 
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import org.eclipse.dataspaceconnector.dataloading.AssetLoader;
@@ -35,4 +37,5 @@ public class AssetController {
         monitor.debug(format("Asset created %s", asset.getId()));
         return asset.getId();
     }
+
 }

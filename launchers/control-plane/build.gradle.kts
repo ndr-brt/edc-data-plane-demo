@@ -10,6 +10,7 @@ dependencies {
     val edcVersion = "0.0.1-SNAPSHOT"
 
     api("$edcGroup:filesystem-configuration:$edcVersion")
+    api("$edcGroup:filesystem-vault:$edcVersion")
     api("$edcGroup:core:$edcVersion")
     api("$edcGroup:http:$edcVersion")
     api("$edcGroup:ids:$edcVersion")
@@ -20,8 +21,14 @@ dependencies {
     api("$edcGroup:transfer-process-store-memory:$edcVersion")
     api("$edcGroup:contractnegotiation-store-memory:$edcVersion")
     api("$edcGroup:contractdefinition-store-memory:$edcVersion")
+    api("$edcGroup:sync-data-transfer-api:$edcVersion")
+    api("$edcGroup:sync-data-transfer-consumer:$edcVersion")
+    api("$edcGroup:sync-data-transfer-provider:$edcVersion")
+    api("$edcGroup:http-receiver:$edcVersion")
 
     api("jakarta.ws.rs:jakarta.ws.rs-api:3.0.0")
+    api("org.bouncycastle:bcpkix-jdk15on:1.56")
+
 }
 
 application {
