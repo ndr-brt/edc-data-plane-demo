@@ -4,15 +4,20 @@ plugins {
     id("com.github.johnrengelman.shadow") version "7.0.0"
 }
 
+
 dependencies {
-    api("org.eclipse.dataspaceconnector:web-spi:0.0.1-SNAPSHOT")
-    api("org.eclipse.dataspaceconnector:core-base:0.0.1-SNAPSHOT")
-    api("org.eclipse.dataspaceconnector:core-boot:0.0.1-SNAPSHOT")
-    api("org.eclipse.dataspaceconnector:http:0.0.1-SNAPSHOT")
-    api("org.eclipse.dataspaceconnector:data-plane-spi:0.0.1-SNAPSHOT")
-    api("org.eclipse.dataspaceconnector:data-plane-framework:0.0.1-SNAPSHOT")
-    api("org.eclipse.dataspaceconnector:data-plane-http:0.0.1-SNAPSHOT")
-    api("org.eclipse.dataspaceconnector:data-plane-api:0.0.1-SNAPSHOT")
+    val edcGroup = "org.eclipse.dataspaceconnector"
+    val edcVersion = "0.0.1-SNAPSHOT"
+
+    api("$edcGroup:web-spi:$edcVersion")
+    api("$edcGroup:filesystem-configuration:$edcVersion")
+    api("$edcGroup:core-base:$edcVersion")
+    api("$edcGroup:core-boot:$edcVersion")
+    api("$edcGroup:http:$edcVersion")
+    api("$edcGroup:data-plane-spi:$edcVersion")
+    api("$edcGroup:data-plane-framework:$edcVersion")
+    api("$edcGroup:data-plane-http:$edcVersion")
+    api("$edcGroup:data-plane-api:$edcVersion")
 }
 
 application {
@@ -22,5 +27,5 @@ application {
 tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
     exclude("**/pom.properties", "**/pom.xm", "jndi.properties", "jetty-dir.css", "META-INF/maven/**")
     mergeServiceFiles()
-    archiveFileName.set("data-plane-server.jar")
+    archiveFileName.set("edc.jar")
 }

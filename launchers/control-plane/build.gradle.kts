@@ -4,12 +4,13 @@ plugins {
     id("com.github.johnrengelman.shadow") version "7.0.0"
 }
 
-val edcGroup = "org.eclipse.dataspaceconnector"
-val edcVersion = "0.0.1-SNAPSHOT"
 
 dependencies {
-    api("$edcGroup:core:$edcVersion")
+    val edcGroup = "org.eclipse.dataspaceconnector"
+    val edcVersion = "0.0.1-SNAPSHOT"
 
+    api("$edcGroup:core:$edcVersion")
+    api("$edcGroup:filesystem-configuration:$edcVersion")
     api("$edcGroup:assetindex-memory:$edcVersion")
     api("$edcGroup:transfer-process-store-memory:$edcVersion")
     api("$edcGroup:contractnegotiation-store-memory:$edcVersion")
