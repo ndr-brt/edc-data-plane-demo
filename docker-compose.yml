@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  provider-control-plane:
+    image: control-plane-demo
+
+  provider-data-plane:
+    image: data-plane-demo
+
+  consumer-control-plane:
+    image: control-plane-demo
+
+  consumer-data-plane:
+    image: data-plane-demo
+
