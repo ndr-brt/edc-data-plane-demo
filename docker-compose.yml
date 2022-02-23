@@ -2,14 +2,34 @@ version: "3.9"
 
 services:
   provider-control-plane:
-    image: control-plane-demo
+    build:
+      context: .
+      args:
+        JAR: launchers/control-plane/build/libs/edc.jar
+    volumes:
+      - ${PWD}/config/provider-control-plane.properties:/app/configuration.properties
 
   provider-data-plane:
-    image: data-plane-demo
+    build:
+      context: .
+      args:
+        JAR: launchers/data-plane/build/libs/edc.jar
+    volumes:
+      - ${PWD}/config/provider-data-plane.properties:/app/configuration.properties
 
   consumer-control-plane:
-    image: control-plane-demo
+    build:
+      context: .
+      args:
+        JAR: launchers/control-plane/build/libs/edc.jar
+    volumes:
+      - ${PWD}/config/consumer-control-plane.properties:/app/configuration.properties
 
   consumer-data-plane:
-    image: data-plane-demo
+    build:
+      context: .
+      args:
+        JAR: launchers/data-plane/build/libs/edc.jar
+    volumes:
+      - ${PWD}/config/consumer-data-plane.properties:/app/configuration.properties
 
