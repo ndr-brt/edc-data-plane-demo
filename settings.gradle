@@ -1,0 +1,6 @@
+rootProject.name = 'catenax-digitaltwin-demo'
+include 'launchers:control-plane'
+findProject(':launchers:control-plane')?.name = 'control-plane'
+include 'launchers:data-plane'
+findProject(':launchers:data-plane')?.name = 'data-plane'
+
