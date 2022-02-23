@@ -6,6 +6,8 @@ services:
       context: .
       args:
         JAR: launchers/control-plane/build/libs/edc.jar
+    ports:
+      - "8181:9191"
     volumes:
       - ${PWD}/config/provider-control-plane.properties:/app/configuration.properties
 
@@ -14,6 +16,8 @@ services:
       context: .
       args:
         JAR: launchers/data-plane/build/libs/edc.jar
+    ports:
+      - "8182:9191"
     volumes:
       - ${PWD}/config/provider-data-plane.properties:/app/configuration.properties
 
@@ -22,6 +26,8 @@ services:
       context: .
       args:
         JAR: launchers/control-plane/build/libs/edc.jar
+    ports:
+      - "8191:9191"
     volumes:
       - ${PWD}/config/consumer-control-plane.properties:/app/configuration.properties
 
@@ -30,6 +36,8 @@ services:
       context: .
       args:
         JAR: launchers/data-plane/build/libs/edc.jar
+    ports:
+      - "8192:9191"
     volumes:
       - ${PWD}/config/consumer-data-plane.properties:/app/configuration.properties
 

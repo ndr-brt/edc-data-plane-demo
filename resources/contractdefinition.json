@@ -1,0 +1,48 @@
+{
+  "id": "1",
+  "accessPolicy": {
+    "uid": "AP_0",
+    "permissions": [
+      {
+        "edctype": "dataspaceconnector:permission",
+        "uid": null,
+        "target": "text-document",
+        "action": {
+          "type": "USE"
+        },
+        "constraints": [],
+        "duties": []
+      }
+    ],
+    "prohibitions": [],
+    "obligations": [],
+    "extensibleProperties": {},
+    "@type": {
+      "@policytype": "set"
+    }
+  },
+  "contractPolicy": {
+    "uid": "CP_0",
+    "permissions": [
+      {
+        "edctype": "dataspaceconnector:permission",
+        "uid": null,
+        "target": "text-document",
+        "action": {
+          "type": "USE"
+        },
+        "constraints": [],
+        "duties": []
+      }
+    ],
+    "prohibitions": [],
+    "obligations": [],
+    "extensibleProperties": {},
+    "@type": {
+      "@policytype": "set"
+    }
+  },
+  "selectorExpression": {
+    "criteria": []
+  }
+}

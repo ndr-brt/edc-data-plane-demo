@@ -9,12 +9,19 @@ dependencies {
     val edcGroup = "org.eclipse.dataspaceconnector"
     val edcVersion = "0.0.1-SNAPSHOT"
 
-    api("$edcGroup:core:$edcVersion")
     api("$edcGroup:filesystem-configuration:$edcVersion")
+    api("$edcGroup:core:$edcVersion")
+    api("$edcGroup:http:$edcVersion")
+    api("$edcGroup:ids:$edcVersion")
+    api("$edcGroup:iam-mock:$edcVersion")
+    api("$edcGroup:control-api:$edcVersion")
+    api("$edcGroup:observability-api:$edcVersion")
     api("$edcGroup:assetindex-memory:$edcVersion")
     api("$edcGroup:transfer-process-store-memory:$edcVersion")
     api("$edcGroup:contractnegotiation-store-memory:$edcVersion")
     api("$edcGroup:contractdefinition-store-memory:$edcVersion")
+
+    api("jakarta.ws.rs:jakarta.ws.rs-api:3.0.0")
 }
 
 application {

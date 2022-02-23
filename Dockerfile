@@ -13,4 +13,4 @@ HEALTHCHECK --interval=5s --timeout=5s --retries=10 CMD curl --fail -X GET http:
 ENTRYPOINT java \
     -Djava.security.edg=file:/dev/.urandom \
     -Dedc.fs.config="configuration.properties" \
-    -jar edc.jar
+    -jar app.jar
