@@ -13,10 +13,4 @@ HEALTHCHECK --interval=5s --timeout=5s --retries=10 CMD curl --fail -X GET http:
 ENTRYPOINT java \
     -Djava.security.edg=file:/dev/.urandom \
     -Dedc.fs.config="configuration.properties" \
-    -Dedc.ids.id="urn:connector:edc-connector-24" \
-    -Dedc.ids.title="Eclipse Dataspace Connector" \
-    -Dedc.ids.description="Eclipse Dataspace Connector with IDS extensions" \
-    -Dedc.ids.maintainer="https://example.maintainer.com" \
-    -Dedc.ids.curator="https://example.maintainer.com" \
-    -Dids.webhook.address="http://localhost:8181" \
     -jar edc.jar
