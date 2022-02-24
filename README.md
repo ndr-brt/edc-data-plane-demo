@@ -1,4 +1,4 @@
-# Catena-x Digital Twin demo
+# EDC data plane demo
 
 ## Prerequisites
 - EDC artifacts published on maven local at commmit `39387f62b8489a8f566ae20727c07f0fb8cf429c`

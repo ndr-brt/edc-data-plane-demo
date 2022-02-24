@@ -1,4 +1,4 @@
-rootProject.name = 'catenax-digitaltwin-demo'
+rootProject.name = 'edc-data-plane-demo'
 include 'launchers:control-plane'
 findProject(':launchers:control-plane')?.name = 'control-plane'
 include 'launchers:data-plane'
