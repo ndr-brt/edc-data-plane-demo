@@ -1,7 +1,7 @@
 {
   "edctype": "dataspaceconnector:datarequest",
   "id": "412123341234",
-  "contractId": "1:8809c75c-a07a-4c83-8737-db268e39ca63",
+  "contractId": "1:cc2f0d88-11ac-495f-80ad-3e30c954e228",
   "connectorId": "provider-control-plane",
   "connectorAddress": "http://provider-control-plane:9191/api/ids/multipart",
   "protocol": "ids-multipart",
@@ -20,3 +20,4 @@
   }
 }
 
+q

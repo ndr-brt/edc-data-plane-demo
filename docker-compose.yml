@@ -29,6 +29,16 @@ services:
     volumes:
       - ${PWD}/config/provider-data-plane.properties:/app/configuration.properties
 
+  provider-backend-service:
+    build:
+      context: .
+      args:
+        JAR: launchers/backend-service/build/libs/edc.jar
+    ports:
+      - "8194:9191"
+    volumes:
+      - ${PWD}/config/provider-backend-service.properties:/app/configuration.properties
+
   consumer-control-plane:
     build:
       context: .

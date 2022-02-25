@@ -21,6 +21,7 @@ dependencies {
     api("$edcGroup:transfer-process-store-memory:$edcVersion")
     api("$edcGroup:contractnegotiation-store-memory:$edcVersion")
     api("$edcGroup:contractdefinition-store-memory:$edcVersion")
+
     api("$edcGroup:sync-data-transfer-api:$edcVersion")
     api("$edcGroup:sync-data-transfer-consumer:$edcVersion")
     api("$edcGroup:sync-data-transfer-provider:$edcVersion")
