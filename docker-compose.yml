@@ -8,6 +8,7 @@ services:
         JAR: launchers/control-plane/build/libs/edc.jar
     ports:
       - "8181:9191"
+      - "8184:9192" #validation
     environment:
       EDC_VAULT: vault.properties
       EDC_KEYSTORE: cert.pfx
@@ -24,6 +25,7 @@ services:
         JAR: launchers/data-plane/build/libs/edc.jar
     ports:
       - "8182:9191"
+      - "8183:9192" # public
     volumes:
       - ${PWD}/config/provider-data-plane.properties:/app/configuration.properties
 
@@ -53,3 +55,12 @@ services:
     volumes:
       - ${PWD}/config/consumer-data-plane.properties:/app/configuration.properties
 
+  consumer-backend-service:
+    build:
+      context: .
+      args:
+        JAR: launchers/backend-service/build/libs/edc.jar
+    ports:
+      - "8193:9191"
+    volumes:
+      - ${PWD}/config/consumer-backend-service.properties:/app/configuration.properties
