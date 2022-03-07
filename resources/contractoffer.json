@@ -1,6 +1,6 @@
 {
   "connectorId": "urn:connector:provider-control-plane",
-  "connectorAddress": "http://provider-control-plane:9191/api/ids/multipart",
+  "connectorAddress": "http://provider-control-plane:9191/api/v1/ids/data",
   "protocol": "ids-multipart",
   "contractOffer": {
     "id": "1:3a75736e-001d-4364-8bd4-9888490edb58",

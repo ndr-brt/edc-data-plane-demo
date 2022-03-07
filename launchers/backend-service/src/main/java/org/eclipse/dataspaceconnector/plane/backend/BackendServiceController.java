@@ -12,8 +12,6 @@ import okhttp3.ResponseBody;
 import org.eclipse.dataspaceconnector.spi.monitor.Monitor;
 import org.eclipse.dataspaceconnector.spi.types.domain.edr.EndpointDataReference;
 
-import java.util.Objects;
-
 import static java.lang.String.format;
 
 @Consumes({ MediaType.APPLICATION_JSON })
@@ -40,7 +38,7 @@ public class BackendServiceController {
         try (var response = httpClient.newCall(request).execute()) {
             ResponseBody body = response.body();
             if (response.isSuccessful()) {
-                monitor.info("Data plane responded correctly: " + body.string());
+                monitor.info("Data received from the provider: " + body.string());
             } else {
                 monitor.warning(format("Data plane responded with error: %s %s", response.code(), body.string()));
             }
@@ -53,7 +51,9 @@ public class BackendServiceController {
 
     @GET
     public String getData() {
-        return "some data";
+        var data = "this is a string but could be a file of everything else";
+        monitor.info("Data is requested, will return: '" + data + "'");
+        return data;
     }
 
 }

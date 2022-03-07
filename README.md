@@ -1,7 +1,7 @@
 # EDC data plane demo
 
 ## Prerequisites
-- EDC artifacts published on maven local at this branch: https://github.com/ndr-brt/DataSpaceConnector/tree/fix-minor-bugs (until some bugs won't be fixed on the main branch)
+- EDC artifacts published on maven local at the commit a0c4411dbfec1ee8298aecb04a5145d9419503f5 of the EDC main branch
 - Jdk 11
 - Docker and Docker compose
 - One certificate to sign tokens

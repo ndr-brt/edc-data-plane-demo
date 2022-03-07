@@ -22,14 +22,11 @@ dependencies {
     api("$edcGroup:contractnegotiation-store-memory:$edcVersion")
     api("$edcGroup:contractdefinition-store-memory:$edcVersion")
 
-    api("$edcGroup:sync-data-transfer-api:$edcVersion")
-    api("$edcGroup:sync-data-transfer-consumer:$edcVersion")
-    api("$edcGroup:sync-data-transfer-provider:$edcVersion")
+    api("$edcGroup:data-plane-transfer-spi:$edcVersion")
+    api("$edcGroup:data-plane-transfer-core:$edcVersion")
+    api("$edcGroup:data-plane-transfer-sync:$edcVersion")
     api("$edcGroup:http-receiver:$edcVersion")
-
-    api("jakarta.ws.rs:jakarta.ws.rs-api:3.0.0")
-    api("org.bouncycastle:bcpkix-jdk15on:1.56")
-
+    api("$edcGroup:token-generation:$edcVersion")
 }
 
 application {

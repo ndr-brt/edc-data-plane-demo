@@ -2,8 +2,6 @@ package org.eclipse.dataspaceconnector.plane.control;
 
 import org.eclipse.dataspaceconnector.dataloading.AssetLoader;
 import org.eclipse.dataspaceconnector.spi.WebService;
-import org.eclipse.dataspaceconnector.spi.asset.AssetIndex;
-import org.eclipse.dataspaceconnector.spi.asset.DataAddressResolver;
 import org.eclipse.dataspaceconnector.spi.contract.offer.store.ContractDefinitionStore;
 import org.eclipse.dataspaceconnector.spi.monitor.Monitor;
 import org.eclipse.dataspaceconnector.spi.system.Inject;
@@ -11,15 +9,9 @@ import org.eclipse.dataspaceconnector.spi.system.ServiceExtension;
 import org.eclipse.dataspaceconnector.spi.system.ServiceExtensionContext;
 import org.eclipse.dataspaceconnector.spi.transfer.observe.TransferProcessListener;
 import org.eclipse.dataspaceconnector.spi.transfer.observe.TransferProcessObservable;
-import org.eclipse.dataspaceconnector.spi.transfer.provision.ResourceDefinitionGenerator;
 import org.eclipse.dataspaceconnector.spi.transfer.provision.ResourceManifestGenerator;
 import org.eclipse.dataspaceconnector.spi.transfer.store.TransferProcessStore;
-import org.eclipse.dataspaceconnector.spi.types.domain.transfer.ResourceDefinition;
 import org.eclipse.dataspaceconnector.spi.types.domain.transfer.TransferProcess;
-import org.eclipse.dataspaceconnector.transfer.sync.provider.provision.HttpProviderProxyResourceDefinition;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.UUID;
 
 import static java.lang.String.format;
 
@@ -57,7 +49,6 @@ public class ControlPlaneExtension implements ServiceExtension {
 
         transferProcessObservable.registerListener(new LoggerTransferProcessListener(monitor));
 
-//        resourceManifestGenerator.registerConsumerGenerator(new HttpConsumerProxyResourceGenerator());
     }
 
     private static class LoggerTransferProcessListener implements TransferProcessListener {
@@ -115,17 +106,6 @@ public class ControlPlaneExtension implements ServiceExtension {
         @Override
         public void requested(TransferProcess process) {
             monitor.info(format("Transfer process %s requested", process.getId()));
-        }
-    }
-
-    private static class HttpConsumerProxyResourceGenerator implements ResourceDefinitionGenerator {
-        @Override
-        public @Nullable ResourceDefinition generate(TransferProcess process) {
-            return HttpProviderProxyResourceDefinition.Builder.newInstance()
-                    .id(UUID.randomUUID().toString())
-                    .assetId(process.getDataRequest().getAssetId())
-                    .contractId(process.getDataRequest().getContractId())
-                    .build();
         }
     }
 }
