@@ -27,12 +27,11 @@ public class AssetController {
     }
 
     @POST
-    public String createAsset(Map<String, String> properties) {
-        var asset = Asset.Builder.newInstance().properties(properties).build();
-        // TODO: endpoint should be get by the call
-        var address = DataAddress.Builder.newInstance().type("HttpData")
-                .property("endpoint", "http://provider-backend-service:9191/api/pull")
-                .build();
+    public String createAsset(Map<String, Map<String, String>> properties) {
+        var assetProperties = properties.get("asset");
+        var asset = Asset.Builder.newInstance().properties(assetProperties).build();
+        var dataAddressProperties = properties.get("dataAddress");
+        var address = DataAddress.Builder.newInstance().properties(dataAddressProperties).build();
         assetLoader.accept(asset, address);
 
         monitor.debug(format("Asset created %s", asset.getId()));

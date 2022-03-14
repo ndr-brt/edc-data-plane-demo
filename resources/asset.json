@@ -1,7 +1,13 @@
 {
-  "asset:prop:id": "asset-id",
-  "asset:prop:name": "asset name",
-  "asset:prop:contenttype": "text/plain",
-  "asset:prop:policy-id": "use-eu",
-  "asset:prop:version": "1.0"
+  "asset": {
+    "asset:prop:id": "asset-id",
+    "asset:prop:name": "asset name",
+    "asset:prop:contenttype": "text/plain",
+    "asset:prop:policy-id": "use-eu",
+    "asset:prop:version": "1.0"
+  },
+  "dataAddress": {
+    "type": "HttpData",
+    "endpoint": "http://provider-backend-service:9191/api/pull"
+  }
 }

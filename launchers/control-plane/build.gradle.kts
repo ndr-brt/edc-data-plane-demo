@@ -26,7 +26,7 @@ dependencies {
     api("$edcGroup:data-plane-transfer-core:$edcVersion")
     api("$edcGroup:data-plane-transfer-sync:$edcVersion")
     api("$edcGroup:http-receiver:$edcVersion")
-    api("$edcGroup:token-generation:$edcVersion")
+    api("$edcGroup:token-generation-lib:$edcVersion")
 }
 
 application {
