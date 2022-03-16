@@ -16,6 +16,9 @@ allprojects {
     repositories {
         mavenLocal()
         mavenCentral()
+        maven {
+            url = uri("https://maven.iais.fraunhofer.de/artifactory/eis-ids-public/")
+        }
     }
 
     tasks.withType<Test> {
