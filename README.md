@@ -1,7 +1,7 @@
 # EDC data plane demo
 
 ## Prerequisites
-- EDC artifacts published on maven local at the commit a0c4411dbfec1ee8298aecb04a5145d9419503f5 of the EDC main branch
+- EDC artifacts published on maven local at the commit 2ce5cb26a9677ac387ed31bfa44e7badc671ef13 of the EDC main branch
 - Jdk 11
 - Docker and Docker compose
 - One certificate to sign tokens
