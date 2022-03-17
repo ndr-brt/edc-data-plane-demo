@@ -2,6 +2,7 @@
 
 ## Prerequisites
 - EDC artifacts published on maven local at the commit 2ce5cb26a9677ac387ed31bfa44e7badc671ef13 of the EDC main branch
+  - the command to be used on the EDC repository is `./gradlew -x test publishToMavenLocal`
 - Jdk 11
 - Docker and Docker compose
 - One certificate to sign tokens
